@@ -51,4 +51,15 @@ CREATE TABLE Pedidos(
 );
 
 
+CREATE TABLE DetallePedido(
+	id_detalle INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
+    id_pedido INT NOT NULL,
+    id_videojuego INT NOT NULL,
+    cantidad INT NOT NULL,
+    subtotal DECIMAL(8,2) NOT NULL,
+    FOREIGN KEY (id_pedido) REFERENCES Pedidos(id_pedido),
+    FOREIGN KEY (id_videojuego) REFERENCES Videojuegos(id_videojuego)
+
+);
+	
 
