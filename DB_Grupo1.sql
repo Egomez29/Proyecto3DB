@@ -18,3 +18,10 @@ CREATE TABLE Plataformas(
     fecha_lanzamiento DATE NOT NULL
 );
 
+CREATE TABLE Videojuegos(
+	id_videojuego INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(75) NOT NULL,
+	id_genero INT NOT NULL, 
+    precio DECIMAL(8, 2) NOT NULL,
+    FOREIGN KEY (id_genero) REFERENCES Genero(id_genero)
+);
