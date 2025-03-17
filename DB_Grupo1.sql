@@ -25,3 +25,10 @@ CREATE TABLE Videojuegos(
     precio DECIMAL(8, 2) NOT NULL,
     FOREIGN KEY (id_genero) REFERENCES Genero(id_genero)
 );
+
+CREATE TABLE Inventario (
+	id_inventario INT PRIMARY KEY AUTO_INCREMENT,
+    id_videojuego INT NOT NULL,
+    id_plataforma INT NOT NULL,
+    stock INT NOT NULL
+);
