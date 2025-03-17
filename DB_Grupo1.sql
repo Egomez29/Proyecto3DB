@@ -42,5 +42,13 @@ CREATE TABLE Usuarios(
     telefono VARCHAR(16) NOT NULL
 );
 
+CREATE TABLE Pedidos(
+	id_pedido INT PRIMARY KEY AUTO_INCREMENT,
+    id_usuario INT NOT NULL,
+    fecha_pedido DATE NOT NULL,
+    total DECIMAL(8,2) NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
+);
+
 
 
