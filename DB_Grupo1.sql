@@ -10,3 +10,11 @@ CREATE TABLE Genero(
     descripcion VARCHAR(250) NOT NULL,
     ventas_totales int
 );
+
+CREATE TABLE Plataformas(
+	id_plataforma INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_plataforma VARCHAR(70) NOT NULL,
+    fabricante VARCHAR(60) NOT NULL,
+    fecha_lanzamiento DATE NOT NULL
+);
+
