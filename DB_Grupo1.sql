@@ -1,8 +1,10 @@
 /** Database VideoGame Store */
 
+
+
 CREATE DATABASE IF NOT EXISTS DB_Grupo1;
 USE DB_Grupo1;
-/*DROP DATABASE db_grupo1;*/
+
 
 CREATE TABLE Genero(
 	id_genero INT PRIMARY KEY AUTO_INCREMENT,
@@ -32,3 +34,13 @@ CREATE TABLE Inventario (
     id_plataforma INT NOT NULL,
     stock INT NOT NULL
 );
+
+CREATE TABLE Usuarios(
+	id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50) NOT NULL,
+    email VARCHAR(75) NOT NULL,
+    telefono VARCHAR(16) NOT NULL
+);
+
+
+
