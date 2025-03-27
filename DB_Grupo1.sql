@@ -29,12 +29,14 @@ CREATE TABLE Inventario (
 	id_inventario INT PRIMARY KEY AUTO_INCREMENT,
     id_videojuego INT NOT NULL,
     id_plataforma INT NOT NULL,
-    stock INT NOT NULL
+    stock INT NOT NULL,
+    FOREIGN KEY (id_videojuego) REFERENCES Videojuegos(id_videojuego),
+    FOREIGN KEY (id_plataforma) REFERENCES Plataformas(id_plataforma)
 );
 
 CREATE TABLE Usuarios(
 	id_usuario INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(50) NOT NULL,
+    nombre VARCHAR(75) NOT NULL,
     email VARCHAR(75) NOT NULL,
     telefono VARCHAR(16) NOT NULL
 );
@@ -48,16 +50,15 @@ CREATE TABLE Pedidos(
 );
 
 CREATE TABLE DetallePedido(
-	id_detalle INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
+	id_detalle INT PRIMARY KEY AUTO_INCREMENT,
     id_pedido INT NOT NULL,
     id_videojuego INT NOT NULL,
     cantidad INT NOT NULL,
-    subtotal DECIMAL(8,2) NOT NULL,
+    subtotal DECIMAL(8,2),
     FOREIGN KEY (id_pedido) REFERENCES Pedidos(id_pedido),
     FOREIGN KEY (id_videojuego) REFERENCES Videojuegos(id_videojuego)
-
 );
-	
+
 -- INSERT INTO
 
 INSERT INTO Genero(nombre_genero, descripcion, ventas_totales)
